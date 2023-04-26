@@ -83,3 +83,17 @@ with st.form("input form"):
         prediction = predict(Gender,Married,Dependents,Education,Self_Employed,ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,Property_Area)
         x = True
 
+def getInsight():
+    if Education=="Not Graduate":
+        st.write("if you not Gratuade then there are 3% less likely to be eligible for the loan.")
+
+    if Dependents=="3+":
+        st.write("People with 3+ people Dependent upon them are 4% less likely to be eligible for the loan.")
+    
+
+if x:
+    parsePrediction(prediction)
+    if prediction==1:
+        with st.expander("Want to know more?"):
+            getInsight()
+    x = False
